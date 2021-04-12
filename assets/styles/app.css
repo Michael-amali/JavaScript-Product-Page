@@ -1,0 +1,393 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #031d4d;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.26);
+}
+
+
+
+header h1 {
+  color: white;
+  font-size: 2rem;
+}
+
+/* start of nav bar */
+
+h2,
+h3,
+a {
+	color: #34495e;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.logo {
+	margin: 0;
+	font-size: 1.45em;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.main-nav {
+	margin-top: 5px;
+
+}
+.logo a,
+.main-nav a {
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+}
+
+.main-nav a {
+	color: #34495e;
+	font-size: .99em;
+}
+
+.main-nav a:hover {
+	color: #718daa;
+}
+
+
+
+.header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+	border: 1px solid #a2a2a2;
+	background-color: #f4f4f4;
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+ul.main-nav{
+  list-style: none;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+
+
+
+@media (min-width: 769px) {
+	.header,
+	.main-nav {
+		display: flex;
+	}
+	.header {
+		flex-direction: column;
+		align-items: center;
+    	/* .header{
+		width: 80%;
+		margin: 0 auto;
+		max-width: 1150px;
+	} */
+	}
+
+}
+
+@media (min-width: 1025px) {
+	.header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+}
+
+
+/* end */
+
+button{
+  background: #031d4d;
+  color: white;
+  border: 1px solid #031d4d;
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover,
+button:active {
+  background: #031d4d;
+  border-color: #031d4d;
+}
+
+/* kh */
+.button_1{
+  background: #031d4d;
+  color: white;
+  border: 1px solid #031d4d;
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button_1:focus {
+  outline: none;
+}
+
+.button_1:hover,
+.button_1:active {
+  background: #031d4d;
+  border-color: #031d4d;
+}
+
+.button_2{
+  background: #031d4d;
+  color: white;
+  border: 1px solid #031d4d;
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button_2:focus {
+  outline: none;
+}
+
+.button_2:hover,
+.button_2:active {
+  background: #031d4d;
+  border-color: #031d4d;
+}
+/* kik */
+
+.cart{
+  display: none;
+  margin: 5rem 2rem;
+  border: 2px solid #031d4d;
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+
+.cart h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #031d4d;
+}
+
+
+.product-list {
+  list-style: none;
+  margin: 0 2rem;
+  padding: 0;
+}
+
+.product-item {
+  margin: 2rem auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  width: 50rem;
+  max-width: 90%;
+}
+
+.product-item img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.product-item__content {
+  padding: 1rem;
+  text-align: center;
+  background-color: ghostwhite;
+}
+
+.product-item h2,
+.product-item h3 {
+  margin: 0 0 1rem 0;
+}
+
+/* to display image and info side by side */
+.prod-structure{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+.Add_to_cart{
+  display: none;
+}
+
+.Add_to_cart.visible {
+  display: block;
+  position: fixed;
+  width: 40%;
+  height: 100%;
+  background-color: white;
+  z-index: 1;
+  right: 0px;
+  top: 0px;
+}
+.product-item.visible {
+  display: block;
+  position: fixed;
+  width: 40%;
+  height: 100%;
+  background-color: white;
+  z-index: 1;
+  right: 0px;
+  top: 0px;
+}
+#drop_close_btn{
+  position: relative;
+  top: 1rem;
+  left: 30rem;
+  cursor: pointer;
+}
+.visible{
+  display: block;
+}
+
+.invisible{
+  display: none;
+}
+
+
+
+
+/* footer */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+
+/* section {
+  width: 100%;
+  display: inline-block;
+  background: #ccc;
+  height: 60vh;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+} */
+
+
+.footer-distributed {
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+  padding: 45px 50px;
+}
+
+.footer-distributed .footer-left p {
+  color: #8f9296;
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer-distributed p.footer-links {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+  transition: ease 0.25s;
+}
+
+.footer-distributed p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  transition: ease 0.25s;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "·";
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+.footer-distributed .footer-right {
+  float: right;
+  margin-top: 6px;
+  max-width: 180px;
+}
+
+.footer-distributed .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition: all 0.25s;
+}
+
+.footer-distributed .footer-right a:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+
+.footer-distributed p.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right {
+    text-align: center;
+  }
+  .footer-distributed .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+  }
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8;
+  }
+}
+

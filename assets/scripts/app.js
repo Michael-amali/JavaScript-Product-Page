@@ -38,7 +38,7 @@ class Product {
   
   class ShoppingCart extends CommonFunctionality {
     items = [];
-    quantityCounter = 0;
+    // quantityCounter = 0;
   
     set cartItems(value) {
       this.items = value;
@@ -55,15 +55,15 @@ class Product {
       return sum;
     }
   
-    set cartQuantity(value){
-      this.quantityCounter = value;
-      this.totalOutput1.innerHTML = `<h2 class="">${this.totalQuantity}</h2>`
-    }
+    // set cartQuantity(value){
+    //   this.quantityCounter = value;
+    //   this.totalOutput1.innerHTML = `<h2 class="">${this.totalQuantity}</h2>`
+    // }
   
-    get totalQuantity(){
-      const sumQuantity = this.items.length;
-      return sumQuantity;
-    }
+    // get totalQuantity(){
+    //   const sumQuantity = this.items.length;
+    //   return sumQuantity;
+    // }
   
     constructor(renderHookId) {
       super(renderHookId);
@@ -80,6 +80,10 @@ class Product {
       if(updatedItems.includes(product)){
         updatedItems.pop(product);
         this.cartItems = updatedItems;
+        alert('Deleted from cart');
+      }
+      else{
+        // alert('Not in cart, can not be deleted');
       }
       
     }
@@ -88,7 +92,7 @@ class Product {
       const cartEl = this.createRootElement('section', 'cart');
       cartEl.innerHTML = `
           <h2 class="totalPr">Total Price: \$${0}</h2>
-          <h2 class="totalProPr">Products In Cart: ${0}</h2>
+          <h2 class="pa2pa">Product in cart: <span class ="prodCount">${0}</span></h2>
           <button>Order Now!</button>
       `;
       this.totalOutput = cartEl.querySelector('.totalPr');
@@ -107,6 +111,7 @@ class Product {
   
     removeToCart() {
       App.removeProductToCart(this.product);
+      
     }
   
     render() {
@@ -214,10 +219,21 @@ class Product {
     static addProductToCart(product) {
       this.cart.addProduct(product);
       alert('product added to cart');
+      // Implementation of addition of products
+      const counterVal = document.querySelector('.prodCount');
+      let counterValInt = parseInt(counterVal.innerText.trim());
+      counterValInt = counterValInt + 1;
+      counterVal.innerText = counterValInt;
     }
   
     static removeProductToCart(product) {
       this.cart.removeProduct(product);
+      const counterVal = document.querySelector('.prodCount');
+      let counterValInt = parseInt(counterVal.innerText.trim());
+      if(counterValInt > 0){
+        counterValInt = counterValInt - 1;
+        counterVal.innerText = counterValInt;
+      }
     }
   }
   
